@@ -4,9 +4,9 @@ FROM ventes;
 SELECT 
 SUM(
   CASE
-  WHEN produit = 'Produit A' then 10 * qte
-  WHEN produit = 'Produit B' then 15 * qte
-  WHEN produit = 'Produit C' then 20 * qte
+  WHEN produit = 'Produit A' then prix * qte
+  WHEN produit = 'Produit B' then prix * qte
+  WHEN produit = 'Produit C' then prix * qte
   ELSE 0
   END) as chiffre_affaire,
 SUM(CASE WHEN produit = 'Produit A' THEN qte else 0 END) as ventes_produit_a,
